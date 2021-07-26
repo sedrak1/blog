@@ -1,0 +1,10 @@
+.header{
+    display: block;
+}
+
+.card{
+    margin-top: 3vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
