@@ -1,5 +1,5 @@
 import Home from "../components/Home/Home";
-import Posts from "../components/Posts/Posts";
+import Posts from "../components/NewPost/NewPost";
 import Login from "../components/Login/Login";
 
 export const Routes = {

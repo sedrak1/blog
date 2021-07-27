@@ -28,7 +28,7 @@ export default function Header({pageNumber}) {
                 centered
             >
                 <Tab href="/" label="Home"></Tab>
-                <Tab href="posts" label="Posts" />
+                <Tab href="posts" label="New Post" />
                 <Tab href="login" label="Log in" />
             </Tabs>
         </Paper>

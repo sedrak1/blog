@@ -8,8 +8,6 @@ function App() {
   return (
     <Router>
       <nav>
-        
-
         <Switch>
           
           {Object.values(Routes).map((fn) => {
