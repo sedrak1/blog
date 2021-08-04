@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Header({pageNumber}) {
+export default function Header({pageNumber, tabName}) {
     const classes = useStyles();
     const [value, setValue] = React.useState(pageNumber);
 
@@ -29,7 +29,7 @@ export default function Header({pageNumber}) {
             >
                 <Tab href="/" label="Home"></Tab>
                 <Tab href="posts" label="New Post" />
-                <Tab href="login" label="Log in" />
+                <Tab href="login" label={tabName} />
             </Tabs>
         </Paper>
     );

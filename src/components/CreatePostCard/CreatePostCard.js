@@ -3,22 +3,21 @@ import {
     Button,
     Card,
     CardActionArea,
-    CardContent,
     TextField,
-    Typography,
 } from "@material-ui/core";
+import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import cn from "classnames";
 
 const useStyles = makeStyles({
     root: {
-        // maxWidth: 900,
-        // minWidth:700,
         width: 900,
     },
 });
 
 export default function CreatePostCard() {
+    const [postText, setPostText] = useState("");
+    const posts = [];
     const classes = useStyles();
     const centered = cn({
         flex: true,
@@ -39,6 +38,9 @@ export default function CreatePostCard() {
         "text-center": true,
         "w-full": true,
     });
+    const handlePost = (arr, text) => {
+        <div>{arr.map((el) => el.text)}</div>;
+    };
 
     return (
         <div className={centered}>
@@ -50,22 +52,31 @@ export default function CreatePostCard() {
                                 alt="User avatar"
                                 src="/static/images/avatar/1.jpg"
                             />
-                            <h2>User Name</h2>
+                            <h2>{localStorage.getItem("userName")}</h2>
                         </div>
                     </CardActionArea>
                     <div class="flex">
                         <TextField
+                            onChange={(e) => {
+                                setPostText(e.target.value);
+                            }}
+                            multiline="true"
                             id="standard-primary"
                             label="whats on your mind"
                             color="primary"
                             fullWidth="true"
                         />
-                        <Button variant="contained" color="primary">
+                        <Button
+                            onClick={handlePost(posts, postText)}
+                            variant="contained"
+                            color="primary"
+                        >
                             Post
                         </Button>
                     </div>
                 </div>
             </Card>
+            
         </div>
     );
 }
